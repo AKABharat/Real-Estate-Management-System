@@ -1,0 +1,49 @@
+<!--
+    Page/Component Name  : allProperties_RealEstateManagementSystem
+    Description          : helps in structure allProperties 
+    Created Date         : 08/08/2024
+    Modification Date    : 04/09/2024    
+    Developer Name       : BHARAT DOODI 
+-->
+<template>
+    <div if:true={showSpinner} style=" background-color:rgb(246, 227, 176); height: 80px;">
+        <lightning-spinner style="position: fixed;" alternative-text="Loading" variant="brand"></lightning-spinner>
+    </div>
+
+    <template lwc:if={mapMarkersFlag}>
+       <div>
+            <lightning-map map-markers={mapMarkers} class="map"  list-view={listView} > </lightning-map>
+        </div>
+    </template>    
+
+    <div style="margin: 2rem 0;background: #f5f5f8; border-radius: 10px;">
+            <template if:true={properties}>
+                <div>
+                <template for:each={properties} for:item="property">
+                    <div key={property.id} class="property-card">
+                        <img src={property.image} alt="Property Image" class="property-image"/>
+                        <h2>{property.Title}</h2>
+                        <div class="subItem">
+                            <div class="subInfo">🏠 {property.BHK} BHK</div>
+                            <div class="subInfo">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                            <div class="subInfo">🧱 {property.Size} Sqrt</div>
+                        </div>
+                        <div class="subItem">
+                            <div class="subInfo">🗺️ {property.city}</div>
+                            <div class="subInfo">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                            <div class="subInfo"><strong style="color: rgb(22 60 26); font-weight: 900;">₹ </strong> {property.price}</div>
+                        </div>
+                        <div class="subInfo" style="font-weight: 300;">{property.type}</div>
+                        <button class="getEnquiry" data-proid={property.id} onclick={getPropertyDetail} >Get Detail</button>
+                    </div>
+                </template>
+            </div>
+            <div class="showMoreBtnContainer">
+                <button class="showMoreBtn" onclick={showMoreRecordBtn}>Show More</button>
+            </div>
+            </template>
+            <template if:false={properties.length}>
+                <p class="noProperty">No Properties Found 🦉</p>
+            </template>
+    </div>
+</template>

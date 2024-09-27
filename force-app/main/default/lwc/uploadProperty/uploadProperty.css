@@ -1,0 +1,52 @@
+:host {
+    display: block;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: #f4f6f9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.outerContainer{
+        /* background: white; */
+    /* padding: 20px 20px; */
+    /* padding-bottom: 5px; */
+    margin: 0.85rem 0;
+    background: linear-gradient(90deg, rgba(33, 85, 252, 0.5495448179271709) 0%, rgba(182, 104, 249, 1));
+}
+
+.form-section > lightning-input,
+.form-section > lightning-combobox,
+.form-section > lightning-textarea {
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 200px;
+}
+
+.textarea-height {
+    height: 8rem;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .form-section > lightning-input,
+    .form-section > lightning-combobox,
+    .form-section > lightning-textarea {
+        flex: 1 1 100%;
+    }
+}

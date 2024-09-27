@@ -1,0 +1,546 @@
+*{
+    padding: 0;
+    margin: 0;
+    color:  #064f76;
+}
+.property-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.propertyTitle{
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: serif;
+    padding: 1rem;
+    background: #ffffff2e;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    filter: drop-shadow(2px 4px 6px black);
+    color: black;
+}
+
+.property-card {
+    display: flex;
+    flex-direction: column;
+    margin: 1.4rem;;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.property-images {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    filter:drop-shadow(2px 4px 6px black);
+}
+
+.property-info {
+    padding: 20px;
+}
+
+.property-title {
+    font-size: 2em;
+    color: #2E3B4E;
+    margin-bottom: 10px;
+}
+
+.property-subtitle {
+    font-size: 1.2em;
+    color: #69707D;
+    margin-bottom: 20px;
+}
+
+.property-price {
+    font-size: 1.5em;
+    color: #FF6B6B;
+    margin-bottom: 20px;
+}
+
+.property-details p {
+    font-size: 1em;
+    color: #4A4A4A;
+    margin: 5px 0;
+}
+
+.enquiry-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+}
+
+.enquiry-title {
+    font-size: 1.5em;
+    color: #2E3B4E;
+    margin-bottom: 10px;
+}
+
+.enquiry-subtitle {
+    font-size: 1.2em;
+    color: #69707D;
+    margin-bottom: 20px;
+}
+
+.enquiry-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.enquiry-input,
+.enquiry-textarea {
+    margin-bottom: 15px;
+}
+
+.submit-button {
+    align-self: flex-start;
+}
+
+.amenities__item{
+    margin: 0 1rem;
+    padding: 6px 0px 0px;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    height: 96px;
+    position: relative;
+    text-align: center;
+    width: 10rem;
+    font-family: Montserrat, Arial, sans-serif;
+    box-sizing: border-box;
+    float: left;
+    white-space: nowrap;
+    line-height: normal;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    box-shadow:1px 1px 5px 1px #5900ffa1;
+}
+
+.amenities__item__icon{
+    font-size: large;
+    margin: 12px 51.2px 0px;
+    vertical-align: baseline;
+    align-items: center;
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    position: relative;
+    width: 32px;
+    
+    font-family: Montserrat, Arial, sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
+    line-height: normal;
+    font-weight: 400;
+    color: rgb(11, 0, 164);
+    background-color: rgb(255, 255, 255);
+}
+
+.amenities {
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    margin: 0px -16px;
+    padding: 0px 16px 20px;
+    vertical-align: baseline;
+    overflow: auto hidden;
+    white-space: nowrap;
+    font-family: Montserrat, Arial, sans-serif;
+    box-sizing: border-box;
+    line-height: normal;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+    background-color: #EDEDFF;
+    padding: 1rem;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.amenities__item__text{
+    font-size: large;
+    margin: 0 1rem;
+    padding: 4px 6px;
+    color: rgb(96, 96, 96);
+    display: block;
+    line-height: 16px;
+    white-space: normal;
+    height: 24px;
+    overflow: hidden;
+    font-family: Montserrat, Arial, sans-serif;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-weight: 400;
+    background-color: rgb(255, 255, 255);
+}
+
+.enquiryHeading{
+    display: flex;
+    font-size: 2rem;
+    font-weight: 400;
+    justify-content: center;
+    margin-top: 3rem;
+    color: white;
+    filter: drop-shadow(1px 1px 1px black);
+}
+
+.textAreaBody {
+    --sds-c-textarea-sizing-min-height:180px;
+}
+.enquiryBtn{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    margin-bottom: 6rem;
+}
+
+.enquiryContainer{
+      /* border: 2px solid #5F48DB; */
+    /* color: #5F48DB; */
+    color: white;
+    border-top-left-radius: 41%;
+    margin: 8rem 0 -1.5rem 0;
+    border-top: 1rem solid white;
+    border-bottom: 0.5rem solid white;
+    /* background: rgb(99, 83, 255); */
+    background: linear-gradient(0deg, rgb(255 255 255) 2%, rgb(89 143 255 / 0%) 74%);
+}
+.enquirySubmit{
+    border-radius: 10px;
+    font-size: large;
+    width: 10rem;
+    padding: 5px;
+    color: black;
+    box-shadow: 4px 5px;
+    background-color: white;
+}
+.enquirySubmit:hover{
+    box-shadow:none;
+}
+
+.calculatorInput{
+    color:#14213d;
+}
+
+.loan-calculator {
+font-family: "Roboto", sans-serif;
+width: 800px;
+margin: 24px auto;
+
+/* background-color: #e1e1e1; */
+border-radius: 10px;
+color: #14213d;
+/* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
+
+}
+
+.loan-calculator,
+.loan-calculator * {
+box-sizing: border-box;
+}
+
+.loan-calculator .top {
+/* background-color: #e1e1e1; */
+color: #fff;
+padding: 32px;
+}
+
+.loan-calculator .top h2 {
+margin-top: 0;
+text-align: center;
+color: black;
+margin-bottom: 40px;
+font-family: 'Kanit', sans-serif;
+}
+
+.loan-calculator form {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.loan-calculator .group {
+flex-basis: 48%;
+/* Adjust as needed to fit two elements per row */
+}
+
+.loan-calculator form input[type="number"] {
+width: 100%;
+padding: 12px;
+font-size: 18px;
+border-radius: 4px;
+border: 1px solid #ccc;
+transition: border-color 0.3s;
+}
+
+.loan-calculator form input[type="number"]:focus {
+border-color: #326765;
+}
+
+.myBtn {
+width: 93%;
+height: 77px;
+/* border: 1px solid; */
+margin: 25px;
+padding: 5px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.controlButtons {
+margin: 5px;
+}
+
+
+
+
+.loan-calculator .title {
+margin-bottom: 16px;
+color: black;
+font-weight: bold;
+font-size: 20px;
+overflow-x: hidden;
+}
+
+.loan-calculator form input {
+font-size: 20px;
+padding: 8px 24px;
+width: 100%;
+font-family: 'Kanit', sans-serif;
+}
+
+input:focus {
+outline: 1px solid black;
+border-color: #326765;
+}
+
+.loan-calculator .result {
+display: flex;
+justify-content: space-between;
+align-items: center;
+/* background-color: #e1e1e1; */
+height: 70%;
+}
+
+.loan-calculator .result .left {
+width: 70%;
+padding: 8px 32px;
+/* margin-top: 40px; */
+}
+
+.loan-calculator .left h3 {
+font-size: 22px;
+font-weight: bold;
+margin-bottom: 9px;
+margin-top: 14px;
+}
+
+.loan-calculator .result .value {
+font-size: 30px;
+font-weight: 600;
+padding-bottom: 10px;
+border-bottom: 2px solid rgba(20, 33, 61, 0.2);
+}
+
+.loan-calculator .result .value::before {
+content: "\20B9";
+font-size: 24px;
+font-weight: 400;
+margin-right: 6px;
+opacity: 0.4;
+}
+
+.loan-calculator .calculate-btn {
+background-color: #4f4c5e;
+color: #fff;
+border: none;
+padding: 8px 32px;
+border-radius: 8px;
+font-size: 18px;
+font-weight: 600;
+cursor: pointer;
+margin: 24px 0;
+}
+
+.calculate-btn:hover {
+background-color: #176B87;
+}
+
+.resetBtn {
+background-color: #4f4c5e;
+color: #fff;
+border: none;
+padding: 8px 32px;
+border-radius: 8px;
+font-size: 18px;
+font-weight: 600;
+cursor: pointer;
+/* margin: 24px 0;  */
+}
+
+.resetBtn:hover {
+background-color: #176B87;
+}
+
+.loan-calculator .right {
+width: 50%;
+padding: 10px;
+
+/* border: 1px solid black; */
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+display: none;
+}
+@media(max-width: 488px){
+.loan-calculator {
+width: 90%;
+max-width: 500px;
+}
+
+.loan-calculator form {
+flex-direction: column;
+gap: 10px;
+}
+
+.loan-calculator .result {
+flex-direction: column;
+text-align: center;
+}
+}
+@media(max-width: 650px) {
+.group{
+font-size: 5px;
+}
+h3{
+font-size: 15px;
+}
+.value{
+font-size: 18px;
+}
+.loan-calculator {
+width: 90%;
+max-width: 500px;
+}
+
+.loan-calculator form {
+/* flex-direction: column; */
+gap: 10px;
+}
+
+.loan-calculator .result {
+/* flex-direction: column; */
+text-align: center;
+}
+.title{
+overflow-x: hidden;
+}
+}
+
+
+
+@media (max-width: 768px) {
+
+/* Add tablet-specific CSS here, if needed */
+.loan-calculator {
+width: 90%;
+max-width: 90%;
+
+}
+
+.loan-calculator form {
+/* flex-direction: column; */
+gap: 10px;
+}
+
+.loan-calculator .result {
+/* flex-direction: column; */
+text-align: center;
+}
+}
+
+@media (max-width: 360px) {
+.myBtn {
+flex-direction: column;
+align-items: center;
+}
+}
+
+
+.map-container {
+    margin: 0 auto;
+}
+
+
+.locationMap{
+    height: 25rem;
+    margin-top: 3.5rem;
+    border: none;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.featureHead{
+    margin: 0 2rem 0 0.5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.proDescription{
+    margin: 0 0.25rem;
+    margin-bottom: 2rem;
+    background: #000000;
+    font-size: x-large;
+    /* background: #f3f3ff; */
+    /* border-radius: 10px; */
+    padding: 2rem;
+    font-weight: bold;
+    color: white;
+    font-weight: 400;
+    border-bottom: 1rem solid #6353ff;
+
+}
+
+.moreDetailContainer{
+    background: #F3F3FF;
+    border: 1px solid #DBB7FF;
+    margin: 0 2rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+.proAddressDetail, table{
+    margin: 0.1rem 2rem;
+    font-size: large;
+    color: rgb(11, 0, 164);
+}
+
+.tableDataLeft{
+    width: 10rem;
+    color: rgb(11, 0, 164);
+}
+
+.downloadpdf{
+    font-size: medium;
+    display: flex;
+    justify-content: end;
+    margin: 0 2rem;
+}
+
+
+.proData{
+    margin:1rem 0;
+}

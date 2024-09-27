@@ -1,0 +1,228 @@
+<!--
+    Page/Component Name  : propertyBuyer_RealEstateManagementSystem
+    Description          : helps in structure RealEstateManagement propertyBuyer component 
+    Created Date         : 08/08/2024
+    Modification Date    : 04/09/2024    
+    Developer Name       : BHARAT DOODI 
+-->
+<template>
+    <lightning-card>
+        <lightning-spinner if:true={showSpinner} alternative-text="Loading" size="medium"></lightning-spinner>
+        <div class="outer_container">
+           <h1 class="slds-text-heading_medium slds-text-align_center welcome-title">Welcome👋 {propertyBuyer.ProBuyer_Name} to your Space</h1>
+            <lightning-card>
+                <template if:true={propertyBuyerFlag}>
+                    
+                    <div class="ownerContainer">
+                        <div>
+                            <img src={personStaticImage} alt="Property Owner Image" class="property-owner"/>
+                        </div>
+                        <div class="ownerDetail">
+                            <table>
+                                <tbody>
+                        <tr class="table-row-space"><td>Name </td><td>: &nbsp;&nbsp;
+                            <b>{propertyBuyer.ProBuyer_Name}</b>
+                        </td></tr>
+                        <tr class="table-row-space"><td>Mobile No. </td><td>: &nbsp;&nbsp;
+                            <b>{propertyBuyer.ProBuyer_mobileNo}</b>
+                        </td></tr>
+                        <tr class="table-row-space"><td>Email Id </td><td>:&nbsp;&nbsp; 
+                            <b>{propertyBuyer.ProBuyer_EmailId}</b>
+                        </td></tr>
+                        </td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="recordCount">
+                        <div class="singleRecodImg">
+                        <div><img class="countImage" src={total_Property} alt="Total Property" /></div>
+                         <div class="countImagTitle">{properties.length} <span style="font-size: large;">Properties Intrested In</span></div>
+                        </div>
+                        <div class="singleRecodImg">
+                         <div><img class="countImage" src={total_Enquiry} alt="Enquiry Recieved" /></div>
+                         <div class="countImagTitle">{inquiries.length} <span style="font-size: large;"> Enquiry Filled </span></div>
+                        </div>
+                    </div>
+    
+                </div>
+                </template>
+            </lightning-card>
+
+        <hr class="horizontalLine">
+            <div class="detail">
+            <lightning-card>
+                <div class="detailTitle propertyTitle"><p>Property Details 🏡 </p></div>
+                <template lwc:if={properties.length}>
+                    <div class="propertyContainer">
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_fixed-layout responsive-table">
+                        <thead class="tableHeadStatic">
+                            <tr>
+                                <th>Serial No.</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>City</th>
+                                <th>BHK</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={properties} for:item="property">
+                                <tr key={property.propertyId}>
+                                    <td>{property.seqNo}</td>
+                                    <td>
+                                        <img src={property.image} alt={property.Name} class="property-image" />
+                                    </td>
+                                    <td>{property.Title}</td>
+                                    <td>{property.Name}</td>
+                                    <td>{property.type}</td>
+                                    <td>{property.city}</td>
+                                    <td>{property.BHK}</td>
+                                    <td>
+                                        <lightning-button label="Show" data-id={property.propertyId} onclick={handleShow} class="slds-m-right_small"></lightning-button>
+                                        <lightning-button label="Delete" data-id={property.propertyId} onclick={handleProDelete} variant="destructive"></lightning-button>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+                </template>
+                <template lwc:else>
+                    <div  class="noData">You have not Uploaded Any Property 😞</div>
+                </template>
+                <div class="detailTitle"><p>Enquiry Details 📩 </p></div>
+                <div class="enquiryContainer">
+                    <lightning-card>
+                <template lwc:if={inquiries.length}>
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_fixed-layout responsive-table">
+                        <thead class="tableHeadStatic">
+                            <tr>
+                                <th>Serial No.</th>
+                                <th>Name</th>
+                                <th>Enquiry Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Created Date</th>
+                                <th>Message</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={inquiries} for:item="inquiry">
+                                <tr key={inquiry.enquiryId}>
+                                    <td>{inquiry.seqNo}</td>
+                                    <td>{inquiry.Name}</td>
+                                    <td class="slds-truncate">{inquiry.enquiryName}</td>
+                                    <td>{inquiry.enquiryPhone}</td>
+                                    <td class="slds-truncate">{inquiry.enquiryEmail}</td>
+                                    <td>{inquiry.enquiryCreatedDate}</td>
+                                    <td class="slds-truncate">{inquiry.enquiryMessage}</td>
+                                    <td>
+                                        <lightning-button label="View" data-id={inquiry.enquiryId} onclick={handleView} class="slds-m-right_small"></lightning-button>
+                                        <lightning-button label="Delete" data-id={inquiry.enquiryId} onclick={handleEnqDelete} variant="destructive"></lightning-button>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+                <template lwc:else>
+                    <div class="noData">No Enquiry Recieved❗</div>
+                </template>
+                </lightning-card>
+                </div>
+                
+    
+                <template lwc:if={enquiryWindow}>
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                             aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <header class="slds-modal__header">
+                                <lightning-button-icon icon-name="utility:close" onclick={showEnquiryPopUpClose}
+                                                       variant="bare-inverse" class="slds-modal__close"></lightning-button-icon>
+                                <h2 class="slds-text-heading_medium slds-hyphenate">Enquiry Details
+                                </h2>
+                            </header>
+                            
+                            <div class="recordViewDetail">
+                                
+                                <lightning-record-view-form record-id={enquiryID} object-api-name="Enquiry__c">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-col slds-size_1-of-1">
+                                            <lightning-output-field field-name="Name"></lightning-output-field>
+                                            <lightning-output-field field-name="Enquiry_Name__c"></lightning-output-field>
+                                            <lightning-output-field field-name="Enquiry_Phone__c"></lightning-output-field>
+                                            <lightning-output-field field-name="Enquiry_Email__c"></lightning-output-field>
+                                            <lightning-output-field field-name="Enquiry_Created_Date__c"></lightning-output-field>
+                                            <lightning-output-field field-name="Enquiry_Message__c"></lightning-output-field>
+                                        </div>
+                                    </div>
+                                </lightning-record-view-form>
+                            </div>
+                            <footer class="slds-modal__footer">
+                                <lightning-button variant="brand" label="Cancel" title="Cancel"
+                                                  onclick={showEnquiryPopUpClose} style="margin-right:5px"></lightning-button>
+                            </footer>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </template>
+            </lightning-card>
+        </div>
+    
+    
+            <template lwc:if={propertyWindow}>
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                         aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <lightning-button-icon icon-name="utility:close" onclick={showPropertyPopUpClose}
+                                                   variant="bare-inverse" class="slds-modal__close">
+                                                   </lightning-button-icon>
+                            <h2 class="slds-text-heading_medium slds-hyphenate">Property Details
+                            </h2>
+                        </header>
+    
+                        <div class="recordViewDetail">
+    
+                            <lightning-record-view-form record-id={propertyID} object-api-name="Property__c">
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <lightning-output-field field-name="Name"></lightning-output-field>
+                                        <lightning-output-field field-name="Property_Type__c">
+    
+                                        </lightning-output-field>
+                                        <lightning-output-field field-name="Property_Title__c"></lightning-output-field>
+                                        <lightning-output-field field-name="Property_City__c">
+    
+                                        </lightning-output-field>
+                                        <lightning-output-field field-name="Property_Address__c"></lightning-output-field>
+                                        <lightning-output-field field-name="Zip_Code__c">
+    
+                                        </lightning-output-field>
+                                        <lightning-output-field field-name="Property_Description__c"></lightning-output-field>
+                                        <lightning-output-field field-name="Property_Price__c">
+    
+                                        </lightning-output-field>
+                                        <lightning-output-field field-name="Property_Photos__c"></lightning-output-field>
+                                        <lightning-button  variant="brand-outline" label="Preview on Website" title="Preview on Website"
+                                        onclick={showPropertyOnSite}></lightning-button>
+                                    </div>
+                                </div>
+    
+                            </lightning-record-view-form>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <lightning-button variant="brand" label="Cancel" title="Cancel"
+                                                        onclick={showPropertyPopUpClose} style="margin-right:5px"></lightning-button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+                </template>
+        </div>
+    </lightning-card>
+</template>

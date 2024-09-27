@@ -1,0 +1,212 @@
+.outer_container{
+    height: 100rem;
+}
+
+.welcome-title{
+    /* margin: 1rem 0; */
+    font-weight: 900;
+    font-size: revert;
+    font-size: xx-large;
+}
+.property-owner{
+    width: 13rem;
+    
+}
+
+.ownerDetail{
+    margin: 2rem;
+    font-size: 1.8em;
+}
+
+.recordViewDetail{
+    background: white;
+    padding: 20px 20px; 
+    padding-bottom: 5px;
+    height: 40rem;
+    overflow: auto;
+}
+
+.countImage{
+    width: 7rem;
+}
+.countImagTitle{
+    font-size: 4rem;
+    padding-left: 2.5rem;
+    padding-top: 0.25rem;
+}
+
+.singleRecodImg{
+    display: flex;
+}
+
+.ownerContainer{
+    display: flex;
+    margin: 4rem 0;
+    border-left: none;
+    padding: 2rem 4rem;
+    border-right: darkkhaki;
+    border: x solid #8080801a;
+    border: 9px solid #efefef;
+    /* background: rgb(2, 0, 36); */
+    /* background: linear-gradient(90deg, rgb(255 255 255) 0%, rgba(3, 2, 51, 0.5579481792717087) 0%, rgb(215 255 131 / 39%) 0%, rgb(154 154 255 / 37%) 35%, rgb(104 104 255 / 31%) 49%, rgba(255, 0, 245, 0.10136554621848737) 100%); */
+    /* filter: hue-rotate(45deg); */
+    background-image: linear-gradient(0deg, hsl(240deg 100% 78% / 61%) 0%, hsl(222deg 100% 67% / 31%) 73%, hsl(223deg 100% 78% / 14%) 99%, hsl(0deg 0% 100%) 100%);
+}
+
+
+.table-row-space{
+    display: table;
+    margin: 1rem;
+}
+
+.info-data-btn{
+    text-align: center;
+    font-size: large;
+}
+
+.propertyContainer, .enquiryContainer{
+    filter: drop-shadow(2px 4px 6px silver);
+    min-height: 14rem;
+    max-height: 30rem;
+    overflow: auto;
+}
+
+
+
+.detailTitle{
+    font-size: 2rem;
+    margin: 2rem 0 0 0;
+    text-align: center;
+    filter: drop-shadow(2px 4px 6px grey);
+}
+.tableHeadStatic{
+    top: 0;
+    z-index: 99;
+    position: sticky;
+}
+.propertyTitle{
+    margin: 0 0 1rem 0;
+}
+
+.horizontalLine{
+    margin: 0px 5rem;
+    border-width: 0.2rem;
+    /* background: #222222; */
+    border-color: #dfd0ff;
+}
+.noData{
+    text-align: center;
+    padding: 4rem 0px;
+    font-size: 1.4rem;
+}
+
+
+
+
+
+
+
+.property-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+@media screen and (max-width: 600px) {
+    .responsive-table thead {
+        display: none;
+    }
+
+    .responsive-table tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .responsive-table td {
+        display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .responsive-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.responsive-table th, .responsive-table td {
+    padding: 8px;
+    text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+    .responsive-table thead {
+        display: none;
+    }
+
+    .responsive-table tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .responsive-table td {
+        display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .responsive-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+
+.data-btn{
+    padding: 0.5rem 1.1rem;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    filter: drop-shadow(2px 4px 6px grey);
+}
+.data-btn:hover{
+    filter: none;
+}

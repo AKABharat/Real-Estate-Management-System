@@ -1,0 +1,106 @@
+<!--
+    Page/Component Name  : login_signup_RealEstateManagementSystem
+    Description          : helps in structure RealEstateManagement login_signup 
+    Created Date         : 08/08/2024
+    Modification Date    : 04/09/2024    
+    Developer Name       : BHARAT DOODI 
+-->
+<template>
+   
+        <lightning-spinner if:true={showSpinner} alternative-text="Loading" size="medium"></lightning-spinner>
+    
+    <div class="container">
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="user" class="label">User Name</label>
+                        <input id="user" type="text" class="input" required autocomplete="off" name="loginemailid" value={loginEmailId} onchange={loginInputHandle}>
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <input id="pass" type="password" class="input" required data-type="password" name="loginpassword" value={loginPassword} onchange={loginInputHandle} autocomplete="off">
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign In" onclick={signInHandle}>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <a href="#forgot">Forgot Password?</a>
+                    </div>
+                </div>
+                <div class="sign-up-htm">
+                    <div class="group">
+                        <label for="user" class="label">First Name</label>
+                        <input id="duser" value={signupUserFirstName} required type="text" class="input" placeholder="First Name" name="userfirstname" onchange={signupInputHandle}>
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">Last Name</label>
+                        <input id="duserr" value={signupUserLastName} required type="text" class="input" placeholder="Last Name" name="userlastname" onchange={signupInputHandle}>
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Email ID</label>
+                        <input id="passed" value={signupEmailId} required type="text" class="input" placeholder="abc@gmail.com" name="signupemailid" onchange={signupInputHandle}>
+                    </div>
+                   <!-- <label for="pass" class="label" style="color: white;font-size: small;">I Want to -</label>
+                    <div class="group" style="color: white;background: #ffffffa6; padding: 1rem; border-radius: 3rem;">
+                        <lightning-radio-group name="radioGroup"
+                          options={options}
+                          class="label"
+                          style="color: rgb(255, 255, 255);"
+                          value={userType}
+                          onchange={signupInputHandle}
+                          type="radio"></lightning-radio-group>
+                     </div>
+                     -->
+                    <div class="group">
+                        <label for="pass" class="label">Mobile Number</label>
+                        <input type="tel" id="phone"  value={signupMobileNo} name="signupmobileno" class="input"  placeholder="01234-56789" pattern="[789][0-9]{9}" required  onchange={signupInputHandle}>
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Set Password</label>
+                        <input type="password" value={password} name="password" class="input" minlength="10" placeholder="Enter Password" required  onchange={signupInputHandle}>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign Up" onclick={signUpHandle}>
+                    </div>
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<template lwc:if={authorsizePopUp}>
+
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+        aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+
+            <header class="slds-modal__header">
+                <lightning-button-icon icon-name="utility:close" onclick={authorizeClosePopUp}
+                variant="bare-inverse" class="slds-modal__close"></lightning-button-icon>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate" style="color:black">
+                    Enter OTP Sent at your email</h2>
+            </header>
+            <!--Modal/Popup Box Body Starts here-->
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <lightning-input type="text" required="true"  style="color: black;" label="Enter OTP" value={verifyOtpValue}  name="otpvalue" onchange={handleOtpEnter}> </lightning-input>
+            
+            </div>
+            <!--Modal/Popup Box Footer Starts here-->
+            <footer class="slds-modal__footer">
+                <template lwc:if={showTimer}>
+                <span style="color: #014a6c; font-size: large; font-weight: 900; padding: 1rem;">{optTimer} Sec</span>
+                </template>
+                <button class="slds-button slds-button_brand" disabled={otpResendFlag} onclick={resendOtpHandle}>Resend OTP</button>
+                <button class="slds-button slds-button_success" onclick={VerifyOtpHandle}>Verify</button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+</template>

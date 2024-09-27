@@ -1,0 +1,74 @@
+<!--
+    Page/Component Name  : uploadProperty
+    Description          : helps in structure RealEstateManagement upload Property 
+    Created Date         : 08/08/2024
+    Modification Date    : 04/09/2024    
+    Developer Name       : BHARAT DOODI 
+-->
+<template>
+    <div class="outerContainer">
+    <lightning-card title="Upload New Property" icon-name="utility:salesforce1">
+        <lightning-spinner if:true={showSpinner} alternative-text="Loading" size="medium"></lightning-spinner>
+    
+        <div class="form-container">
+            <div class="form-section">
+                <lightning-input label="Property Title" value={title} onchange={handleInputChange} data-id="title" placeholder="Enter the property title" required></lightning-input>
+
+                <lightning-combobox label="Property Type" value={propertyType} data-id="propertyType"
+                                    options={typeOptions} placeholder="Select property type" onchange={handleInputChange} required></lightning-combobox>
+                
+                <lightning-input type="number" label="BHK" value={bhk} onchange={handleInputChange} data-id="bhk" placeholder="Enter the number of BHK" required></lightning-input>
+
+                <lightning-textarea label="Description" value={description} onchange={handleInputChange} data-id="description" placeholder="Tell us about the property" required></lightning-textarea>
+           
+            </div>
+
+            <div class="form-section">
+                <div>
+                    <lightning-input type="file" accept=".png, .jpg, .jpeg" label="Upload Property Images" onchange={openfileUpload}></lightning-input>
+                </div>
+                  
+                <lightning-textarea label="Address" value={address} onchange={handleInputChange} data-id="address" placeholder="Enter the property address" required></lightning-textarea>
+
+                <lightning-input type="currency" label="Price" value={price} onchange={handleInputChange} data-id="price" placeholder="Enter the price" required></lightning-input>
+
+                <lightning-input type="currency" label="Booking Fee" value={bookingFee} onchange={handleInputChange} data-id="bookingFee" placeholder="Enter the booking fee" required></lightning-input>
+                
+                <lightning-input type="checkbox" label="Piped Gas" checked={pipedGas} onchange={handleInputChange} data-id="pipedGas" required></lightning-input>
+
+                <lightning-input type="checkbox" label="Parking" checked={parking} onchange={handleInputChange} data-id="parking" required></lightning-input>
+
+                <lightning-combobox label="Facing Direction" value={facingDirection} data-id="facingDirection"
+                                    options={propertyDirections} placeholder="Select property Facing Direction" onchange={handleInputChange} required></lightning-combobox>
+                
+                <lightning-input type="number" label="Area (sq ft)" value={area} onchange={handleInputChange} data-id="area" placeholder="Enter the area in square feet" required></lightning-input>
+
+            </div>
+
+            <div class="form-section">
+                <lightning-input type="number" label="Year Built" value={yearBuilt} onchange={handleInputChange} data-id="yearBuilt" placeholder="Enter the year built" required></lightning-input>
+                
+                <lightning-input type="number" label="Floor" value={floor} onchange={handleInputChange} data-id="floor" placeholder="Enter the floor number" required></lightning-input>
+
+                <lightning-input type="number" label="Zip Code" value={zipCode} onchange={handleInputChange} data-id="zipCode" placeholder="Enter the zip code" required></lightning-input>
+
+                <lightning-combobox label="Property City" value={propertyCity} data-id="propertyCity"
+                                    options={cityTypeOptions} placeholder="Select property city" onchange={handleInputChange} required></lightning-combobox>
+                
+               </div>
+
+            <div class="form-actions">
+                <lightning-button label="Upload Property" variant="brand" onclick={handleUpload}></lightning-button>
+            </div>
+
+            <template if:true={errorMessage}>
+                <div class="slds-text-color_error slds-m-top_medium slds-text-align_center">{errorMessage}</div>
+            </template>
+            
+            <template if:true={successMessage}>
+                <div class="slds-text-color_success slds-m-top_medium slds-text-align_center">{successMessage}</div>
+            </template>
+        </div>
+    </lightning-card>
+</div>
+</template>

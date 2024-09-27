@@ -1,0 +1,17 @@
+*{
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.img{
+    width: 96%;
+    margin: 2rem;
+}
+.infoContainer{
+    padding: 1rem;
+}
+.contactIcon{
+    margin: 0.5rem;
+}
+.page_footer{
+    margin: 2rem 0 5rem 0;
+}

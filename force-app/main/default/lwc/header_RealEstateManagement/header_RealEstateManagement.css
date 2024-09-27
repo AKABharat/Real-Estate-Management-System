@@ -1,0 +1,113 @@
+/* General styles */
+.header {
+    width: 100%;
+    /*background-color: #6232ff;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: linear-gradient(to top, #6353ff8f 0%, #6353ff 100%);
+}
+
+.container {
+    border-bottom: 0.3rem solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    border-top: 0.2rem solid white;
+    /* border-left-width: 10px; */
+    border-top-right-radius: 30rem;
+    border-bottom-left-radius: 30rem;
+}
+
+.logo span {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: bolder;
+    filter: drop-shadow(2px 4px 6px black);
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links span {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links span:hover {
+    color: #d6ccf9;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #333;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .menu-icon.change .bar1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-icon.change .bar2 {
+        opacity: 0;
+    }
+
+    .menu-icon.change .bar3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}

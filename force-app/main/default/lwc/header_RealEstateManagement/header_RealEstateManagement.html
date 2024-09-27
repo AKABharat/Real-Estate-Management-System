@@ -1,0 +1,36 @@
+<!--
+    Page/Component Name  : header_RealEstateManagement
+    Description          : helps in structure RealEstateManagement header 
+    Created Date         : 08/08/2024
+    Modification Date    : 04/09/2024    
+    Developer Name       : BHARAT DOODI 
+-->
+<template>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src={briskminds_logo}  onclick={handleHomePage} style="width: 4rem; margin: 0 0.6rem 0rem 1.5rem; filter: drop-shadow(1px 1px 8px white);" alt="Bharat Real Estate" srcset="">
+                <span onclick={handleHomePage}>Bharat Real Estates</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><span onclick={handleHomePage}>Home</span></li>
+                    <li><span onclick={getAllProperyPage}>All Properties</span></li>
+                    <template lwc:if={signInFlag}>
+                        <li><span onclick={handlePropertyLoginSignup}>{currentUser}</span></li>
+                    </template>
+                    <template lwc:if={signInFlagLogOut}>
+                        <li><span onclick={logout}>logOut</span></li>
+                    </template>
+                    <li><span onclick={handleAboutUsPage}>About Us</span></li>
+                </ul>
+                <div class="menu-icon" onclick={toggleMenu}>
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+</template>

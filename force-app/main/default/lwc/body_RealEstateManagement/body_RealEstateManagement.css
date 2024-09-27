@@ -1,0 +1,226 @@
+.cardScoll{
+    width: 100%;
+}
+.homeSearch{
+    box-sizing: border-box;
+    padding: 50px 0px 15px;
+    width: 100%;
+    background: rgb(33,85,252);
+    background: linear-gradient(90deg, rgba(33,85,252,0.5495448179271709) 0%, rgba(182,104,249,1) 100%);
+    position: relative;
+    color: rgb(68, 68, 68);
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 33px;
+    text-align: left;
+    height: 32rem;
+    padding-bottom: 6rem;
+    margin-top: -14.5rem;
+    margin-bottom: 5rem;
+    
+}
+
+
+.searchCity{
+    display: flex;
+    margin: 10px; 
+    justify-content: center;
+}
+
+
+.poppins-light {
+    font-family: "Poppins", sans-serif; 
+    /* font-weight: 300; */
+    /* font-style: normal; */
+    color: white;
+    font-size: 2.1rem;
+    margin: 2rem;
+    font-weight: 800;
+    display: flex;
+    filter: drop-shadow(2px 4px 6px blue);
+    justify-content: center;
+  }
+
+
+
+
+/*  --------------------------------------------------------  */
+
+  .testimonial{
+    display: flex;
+    margin: 5rem 0;
+    justify-content: center;
+    overflow: auto;
+    overflow-y: hidden;
+    
+  }
+
+
+  /*---------------------------------------------------------------*/
+  .property-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 10px;
+    width: 20rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    display: inline-grid;
+}
+
+.property-card:hover {
+    box-shadow: 6px 2px 11px rgb(111 138 155 / 94%);
+    transition-duration: 360ms;
+    transform: scale(1.05);
+}
+.property-image {
+    max-width: 100%;
+    height: 20rem;
+    border-radius: 8px;
+    filter:drop-shadow(2px 4px 6px black);
+}
+
+
+
+.property-card h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.property-card p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.subInfo{
+  font-weight: bold;
+}
+.getEnquiry{
+  padding: 0.5rem;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 8px;
+  color: black;
+  background: #f6f6f6;
+}
+.noProperty{
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 8rem 0;
+}
+
+.subItem{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+.cityTestimonial{
+  color: black;
+}
+
+.showMoreBtnContainer{
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.showMoreBtn{
+  font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 0.3rem 1rem;
+    color: white;
+    border: none;
+    background: #161616d6;
+    filter: drop-shadow(2px 4px 6px black);
+}
+.propertyContainer{
+  overflow: auto;
+  height:41rem;
+}
+
+.seachBtnEle{
+  display: flex;
+  justify-content: center;
+  margin:2rem;
+}
+/*-------------------------------------------------------------------*/
+
+figure.snip1390 {
+  font-family: 'Roboto', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #000000;
+  text-align: center;
+  font-size: 16px;
+  background-color: #2C3447;
+  padding: 30px;
+  background-image: linear-gradient(-25deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 4rem;
+}
+figure.snip1390 *,
+figure.snip1390 *:before,
+figure.snip1390 *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+figure.snip1390 figcaption {
+  width: 100%;
+}
+figure.snip1390 h2,
+figure.snip1390 h4,
+figure.snip1390 blockquote {
+  margin: 0;
+}
+figure.snip1390 h2,
+figure.snip1390 h4 {
+  font-weight: 300;
+}
+figure.snip1390 h2 {
+  color: #ffffff;
+}
+figure.snip1390 h4 {
+  color: #a6a6a6;
+}
+figure.snip1390 blockquote {
+  font-size: 1em;
+  padding: 45px 20px 40px 50px;
+  margin-top: 30px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  font-size: large;
+  box-shadow: inset -1.4px -1.4px 2px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  position: relative;
+}
+figure.snip1390 blockquote:before {
+  font-family: 'FontAwesome';
+  content: "\201C";
+  position: absolute;
+  font-size: 70px;
+  opacity: 0.25;
+  font-style: normal;
+  top: 0px;
+  left: 20px;
+}
+figure.snip1390 .profile {
+  width: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
+  border: solid 5px #A6A57A;
+}
+
+.slds-button_icon-x-small{
+  display: none !important;
+}
